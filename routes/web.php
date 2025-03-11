@@ -11,7 +11,7 @@ Route::get('/', function () {
         return fibonacci($n - 1) + fibonacci($n - 2);
     }
     
-    $fib = fibonacci(40); // Change number for more load
+    $fib = fibonacci(10); // Change number for more load
 
     // Heavy RAM task - Large Array
     $memoryHog = [];
