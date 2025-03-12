@@ -4,23 +4,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    // return 'hello';
-    // Heavy CPU task - Fibonacci Sequence
-    function fibonacci($n) {
-        if ($n < 2) return $n;
-        return fibonacci($n - 1) + fibonacci($n - 2);
-    }
-    
-    $fib = fibonacci(10); // Change number for more load
+    // Simulate CPU load with a small computation
+for ($i = 0; $i < 1000000; $i++) {
+    sqrt($i); // Perform a small computation
+}
 
-    // Heavy RAM task - Large Array
-    $memoryHog = [];
-    for ($i = 0; $i < 5000000; $i++) {
-        $memoryHog[] = str_repeat('X', 100); // Allocate memory
-    }
+// Simulate RAM usage by creating a small array
+$memoryHog = [];
+for ($i = 0; $i < 10000; $i++) {
+    $memoryHog[] = str_repeat('X', 100); // Allocate some memory
+}
 
-    return response()->json([
-        'fibonacci_40' => $fib,
-        'memory_allocated' => count($memoryHog)
-    ]);
+// Sleep for exactly 1 second to control execution time
+sleep(1);
+
+    return 'done';
+});
+
+Route::get('loaderio-839bb121a19f1d9a599297511d1d7386', function(){
+    return 'loaderio-839bb121a19f1d9a599297511d1d7386';
 });
